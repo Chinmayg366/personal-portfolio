@@ -87,9 +87,6 @@
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -104,6 +101,14 @@
   .mono {
     font-family: 'JetBrains Mono', Menlo, Monaco, Consolas, monospace;
   }
+
+  /* Accessible focus for keyboard users */
+  :where(a, button, input, textarea, select):focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 3px;
+  }
+
+  /* Avoid applying borders globally (performance/layout issues) */
 }
 
 @layer components {
@@ -168,7 +173,7 @@
 
 /* Section divider tick pattern */
 .ticks {
-  background-image: linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px);
+  background-image: linear-gradient(to right, hsl(var(--border) / 1) 1px, transparent 1px);
   background-size: 8px 100%;
   height: 10px;
 }

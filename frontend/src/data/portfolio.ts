@@ -10,7 +10,7 @@ export const portfolioData = {
   resumeUrl: "/resume.pdf",
   social: {
     github: "https://github.com/Chinmayg366",
-    linkedin: "https://www.linkedin.com/in/chinmaygurav",
+    linkedin: "https://www.linkedin.com/in/chinmay-gurav-55a38426a/",
     twitter: "https://twitter.com/",
   },
   about: [
