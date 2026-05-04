@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Menu, Moon, Sun, X } from "lucide-react";
+import { FileText, Menu, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 import { cn } from "@/lib/utils";
+import { portfolioData } from "@/data/portfolio";
 
 const links = [
   { href: "#about", label: "About" },
@@ -50,6 +51,14 @@ const Navbar = () => {
         </ul>
 
         <div className="flex items-center gap-2">
+          <a
+            href={portfolioData.resumeUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="hidden sm:inline-flex items-center gap-1.5 h-9 px-3 rounded-md border border-border text-xs font-medium hover:bg-accent transition-colors"
+          >
+            <FileText className="h-3.5 w-3.5" /> Resume
+          </a>
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"

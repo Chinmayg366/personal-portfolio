@@ -1,8 +1,8 @@
-import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowUpRight, FileText, Github, Linkedin, Mail } from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
 
 const Contact = () => {
-  const { email, social } = portfolioData;
+  const { email, social, resumeUrl } = portfolioData;
   return (
     <section id="contact" className="py-24 md:py-32 border-t border-border">
       <div className="max-w-6xl mx-auto px-6">
@@ -47,6 +47,14 @@ const Contact = () => {
               className="inline-flex items-center gap-2 h-10 px-4 rounded-md border border-border text-sm hover:bg-accent transition-colors"
             >
               <Mail className="h-4 w-4" /> Email
+            </a>
+            <a
+              href={resumeUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 h-10 px-4 rounded-md border border-border text-sm hover:bg-accent transition-colors"
+            >
+              <FileText className="h-4 w-4" /> Resume
             </a>
           </div>
         </div>
